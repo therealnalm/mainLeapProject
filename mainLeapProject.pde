@@ -7,6 +7,7 @@ PVector rPointer, fingerPosition;
 boolean RLeftFifth, RRightFifth, RTopThird, RBottomThird, LLeftThird, LRightThird, LTopThird, LBottomThird;
 Finger  fingerIndex;
 
+
 void setup() {
   size(1000, 1000);
   background(255);
@@ -16,6 +17,7 @@ void setup() {
   r=30;
   g=30;
   b=30;
+  
 }
 
 void Opening() {
@@ -78,16 +80,17 @@ boolean RIsLeftThird() {
   return (currXR<width/3);
 }
 
-boolean InBoundaries(a, b, c, d) {
-  return(
-}
+/* boolean InBoundaries(a, b, c, d) {
+  return();
+} */
 
 
 void draw() {
   background(r, g, b);
   println("Test");
+  
 
-  int fps = leap.getFrameRate();
+  int fps = leap.getFrameRate(); 
   for (Hand hand : leap.getHands ()) {
 
 
