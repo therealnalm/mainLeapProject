@@ -14,7 +14,7 @@ public class spriteAnim {
   
   public void setDimens (int x, int y) {
     frmWidth = x;
-    frmHeight = y; 
+    frmHeight = y;
   }
   
   public void setFrms (int amt) {
@@ -22,7 +22,7 @@ public class spriteAnim {
   }
   
   
-  public PImage anim (int frmRate) {
+  public void drawIt (float x, float y, int frmRate) {       //Now it finds the frame of the sprite and draws it at x and y
     if (frmWidth == 0 || frmHeight == 0) {
       throw new IllegalArgumentException("Do setDimens()"); 
     }
@@ -40,9 +40,15 @@ public class spriteAnim {
     */
     
     PImage currFrame = sprite.get (frmNum * frmWidth, 0, frmWidth, frmHeight); 
-    return currFrame; 
+    imageMode(CENTER);
+    image(currFrame,x,y);
     
     
   }
+  
+  public boolean inBoundaries(float x, float y, int xLeft, int xRight, int yTop, int yBottom){
+     return ((x-frmWidth/frmAmt/2>xLeft)&&(x+frmWidth/frmAmt/2<xRight)&&(y-frmHeight/frmAmt/2>yTop)&&(y+frmHeight/frmAmt/2<yBottom)); //checks all 4 sides of the img to be within the 4 given parameters
+  }
+  
   
 }

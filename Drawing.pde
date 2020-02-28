@@ -1,23 +1,25 @@
-public class item{
+//public class item{
 
-  private float objWidth, objHeight;
-  private PImage img;
+//  private PImage img;
   
-  public item(float oWidth, float oHeight, PImage TheImage){
-    objWidth=oWidth;
-    objHeight=oHeight;
-    img=TheImage;
-  }
+//  public item(float oWidth, float oHeight){
+//    objWidth=oWidth;
+//    objHeight=oHeight;
+//  }
   
-  public void drawIt(float x, float y){
-    imageMode(CENTER);
-    image(img,x,y);
-  }
+//  public void drawIt(float x, float y, PImage img){
+//    imageMode(CENTER);
+//    image(img,x,y);
+//  }
   
-  public boolean inBoundaries(int x, int y, int xLeft, int xRight, int yTop, int yBottom){
-     return ((x-objWidth/2>xLeft)&&(x+objWidth/2<xRight)&&(y-objHeight/2>yTop)&&(y+objHeight/2<yBottom));
-  }
+//  public boolean inBoundaries(float x, float y, int xLeft, int xRight, int yTop, int yBottom){
+//     return ((x-objWidth/2>xLeft)&&(x+objWidth/2<xRight)&&(y-objHeight/2>yTop)&&(y+objHeight/2<yBottom));
+//  }
   
   
   
-}
+//}
+
+
+
+// This class was made obsolete by Spriet Animation

@@ -55,13 +55,14 @@ void Opening() {
 
 void level1() {
   fill(0);
-  if (levelTime<600) {
+  if (levelTime<400) {
     text("Good luck! No help from us", 500, 500);
   } else {
     fill(0);
     text("Level 1", 500, 500);
     fill(0, 255, 0);
-    rect(0, 0, 20, 20);
+    rect(20, 20, 40, 40);
+    //if(inBoundaries(currXR, currYR, 0, 20, 0, 0))
   }
 
   levelTime++;
