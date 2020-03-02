@@ -30,7 +30,9 @@ void Opening() {
   }
 }
 
-public void level1() { //cross from left side to right side without hitting boundaries
+
+
+public void level1() {
   fill(0);
   if (levelTime<400) {
     text("Good luck! No help from us", 500, 500);
@@ -38,13 +40,15 @@ public void level1() { //cross from left side to right side without hitting boun
     fill(0);
     text("Level 1", 500, 500);
     fill(0, 255, 0);
-    MainObj.drawRect(currXR, currYR,255,255,255);
+    rect(20, 20, 40, 40);
     //if(inBoundaries(currXR, currYR, 0, 20, 0, 0))
-    
   }
+  levelTime++;
 }
 
-public void level2() {//9 or 16 different colored rectangles. Your rectangle will turn to one of those colors and if you don't get on the right rectangle, you restart
+
+
+public void level2() {
   
 }
 
