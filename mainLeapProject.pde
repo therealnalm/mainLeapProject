@@ -6,6 +6,7 @@ int level, levelTime;
 PVector rPointer, fingerPosition;
 boolean RLeftFifth, RRightFifth, RTopThird, RBottomThird, LLeftThird, LRightThird, LTopThird, LBottomThird;
 Finger  fingerIndex;
+ item MainObj;
 
 
 void setup() {
@@ -17,7 +18,8 @@ void setup() {
   r=30;
   g=30;
   b=30;
-  
+  MainObj = new item(30,30);
+
   spriteAnim joker = new spriteAnim("RedJokerIdle.png");
   joker.setDimens(640, 340);
   joker.setFrms(2);
@@ -101,7 +103,7 @@ void draw() {
 
     Finger  fingerThumb        = hand.getThumb();
 
-    fingerIndex        = hand.getIndexFinger();
+    fingerIndex                = hand.getIndexFinger();
 
     Finger  fingerMiddle       = hand.getMiddleFinger();
 
