@@ -22,4 +22,4 @@
 
 
 
-// This class was made obsolete by Spriet Animation
+// This class was made obsolete by Sprite Animation

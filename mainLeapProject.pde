@@ -5,8 +5,8 @@ float currXR, currYR, rollR, pitchR, yawR, grabR, currXL, currYL, rollL, pitchL,
 int level, levelTime;
 PVector rPointer, fingerPosition;
 boolean RLeftFifth, RRightFifth, RTopThird, RBottomThird, LLeftThird, LRightThird, LTopThird, LBottomThird;
-Finger  fingerIndex;
-
+Finger  fingerIndex; 
+Obj player; 
 
 void setup() {
   size(1000, 1000);

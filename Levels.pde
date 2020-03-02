@@ -30,6 +30,8 @@ void Opening() {
   }
 }
 
+
+
 public void level1() {
   fill(0);
   if (levelTime<400) {
@@ -43,6 +45,8 @@ public void level1() {
   }
   levelTime++;
 }
+
+
 
 public void level2() {
   
