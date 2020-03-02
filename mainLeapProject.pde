@@ -18,6 +18,9 @@ void setup() {
   g=30;
   b=30;
   
+  spriteAnim joker = new spriteAnim("RedJokerIdle.png");
+  joker.setDimens(640, 340);
+  joker.setFrms(2);
 }
 
 void Opening() {

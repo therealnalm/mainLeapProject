@@ -46,7 +46,7 @@ public class spriteAnim {
     
   }
   
-  public boolean inBoundaries(float x, float y, int xLeft, int xRight, int yTop, int yBottom){
+  public boolean inBoundaries(float x, float y, int xLeft, int xRight, int yTop, int yBottom){ //this is essentially a lame hitbox detector. Won' allow any edges of an img to touch the walls
      return ((x-frmWidth/frmAmt/2>xLeft)&&(x+frmWidth/frmAmt/2<xRight)&&(y-frmHeight/frmAmt/2>yTop)&&(y+frmHeight/frmAmt/2<yBottom)); //checks all 4 sides of the img to be within the 4 given parameters
   }
   
