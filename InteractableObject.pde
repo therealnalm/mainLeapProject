@@ -48,14 +48,14 @@ public class Obj {
     
     rect (xLoc, yLoc, wid, hei); 
     
-    if (xLoc - wid/2 <= player.getX() + player.getWidth()/2 && xLoc + wid/2 >= player.getX() - player.getWidth()/2) {
+    /*if (xLoc - wid/2 <= player.getX() + player.getWidth()/2 && xLoc + wid/2 >= player.getX() - player.getWidth()/2) {
       xCollide = true; 
     }
     
     if (yLoc - hei/2 <= player.getY() + player.getHeight()/2 && yLoc + hei/2 >= player.getY() - player.getHeight()/2) {
       yCollide = true; 
     }
-    
+    */
     if (xCollide && yCollide) {
       gameOver(); 
     }
