@@ -1,4 +1,3 @@
-
 public class item{
 
   private float objWidth, objHeight, r, g, b;
