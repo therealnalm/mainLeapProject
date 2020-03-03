@@ -5,14 +5,13 @@ float currXR, currYR, rollR, pitchR, yawR, grabR, currXL, currYL, rollL, pitchL,
 int level, levelTime;
 PVector rPointer, fingerPosition;
 boolean RLeftFifth, RRightFifth, RTopThird, RBottomThird, LLeftThird, LRightThird, LTopThird, LBottomThird;
-<<<<<<< HEAD
-Finger  fingerIndex;
- item MainObj;
 
-=======
-Finger  fingerIndex; 
-Obj player; 
->>>>>>> 650eee4660ed7f9b338bcb3e351bd5eee2b56213
+Finger  fingerIndex;
+item MainObj;
+
+ 
+// Obj player; 
+
 
 void setup() {
   size(1000, 1000);
@@ -24,6 +23,7 @@ void setup() {
   g=30;
   b=30;
   MainObj = new item(30,30);
+  MainObj.setPlayer(); 
 
   spriteAnim joker = new spriteAnim("RedJokerIdle.png");
   joker.setDimens(640, 340);
@@ -41,7 +41,10 @@ boolean RIsLeftThird() {
 
 
 void draw() {
-  background(r, g, b);
+  textSize(40);
+  textAlign(CENTER);
+  // background(r, g, b);
+  background (255); 
   println("Test");
   
 
@@ -129,12 +132,15 @@ void draw() {
       RLeftFifth=(fingerIndex.getPosition().x<200);
     }
   }
+  
   //put level manuevering here
-  if (level==0) {
+  if (level == -1) {
+    gg(); 
+  } else if (level==0) {
     Opening();
   } else if (level==1) {
     level1();
-  }
+  } 
 
   levelTime++;
 }

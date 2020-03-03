@@ -1,3 +1,3 @@
 public void gameOver() {
-  level = 0;
+  level = -1;
 }

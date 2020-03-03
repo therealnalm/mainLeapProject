@@ -1,10 +1,18 @@
+void gg() {
+  background (0); 
+  MainObj.setColor(true, false, false); 
+  if (fingerIndex!=null) {
+    MainObj.drawRect (fingerIndex.getPosition().x, fingerIndex.getPosition().y);
+  }
+  fill (255); 
+  text ("Lol u suck", width/2, height/2); 
+}
+
 void Opening() {
-  textSize(40);
-  textAlign(CENTER);
   fill(0);
   text("Welcome to the game", 500, 500);
   for (Hand hand : leap.getHands ()) {
-    for (Finger f : hand.getFingers()) {
+    for (Finger f : hand.getFingers()) {        // Bone structure for testing
       f.drawBones();
       f.drawJoints();
     }
@@ -12,9 +20,8 @@ void Opening() {
   eSize=map(grabR, 0, 1, 20, 60);
   fill(0, 0, 255);
   if (fingerIndex!=null)
-    ellipse(fingerIndex.getPosition().x, fingerIndex.getPosition().y, 40, eSize);
-
-  if (g<250) {
+    MainObj.drawRect (fingerIndex.getPosition().x, fingerIndex.getPosition().y);    // GOES IN EVERY LEVEL
+  /* if (g<250) {     // This whole thing just makes the background green based off xPos
     g=map(currXR, 0, 1000, 0, 255);
   } else if (r<250) {
     g=255;
@@ -27,7 +34,13 @@ void Opening() {
       levelTime=0;
       b=255;
     }
-  }
+  } */
+  
+  
+  // TESTING
+  item TestBox = new item(100, 100); 
+  TestBox.setColor (false, true, true); 
+  TestBox.drawRect(200, 200);
 }
 
 
