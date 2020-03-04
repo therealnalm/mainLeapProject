@@ -33,10 +33,7 @@ void Opening() {
 
 
 
-  // TESTING
-  item TestBox = new item(100, 100); 
-  TestBox.setColor (0, 200, 200); 
-  TestBox.drawRect(200, 200);
+ 
 }
 
 

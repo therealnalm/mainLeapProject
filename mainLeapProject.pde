@@ -61,6 +61,8 @@ void draw() {
   textAlign(CENTER);
   background (gray); 
   println("Test");
+  r=map (grabR,1,0,20,230);
+  MainObj.setColor(r,r,r);
   
 
   int fps = leap.getFrameRate(); 
@@ -109,7 +111,6 @@ void draw() {
         yawR=handPitch;
         pitchR=handYaw;
         grabR= hand.getGrabStrength();
-        text(gray, 40, 60);
       } else if (handIsLeft) {
         currXL=handPosition.x;
         currYL=handPosition.y;
