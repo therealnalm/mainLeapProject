@@ -52,6 +52,8 @@ public class item {
 
       if (xCollide && yCollide) {
         gameOver();
+      }else{
+      text("It works!", 100,100);
       }
     }
   }
