@@ -10,7 +10,7 @@ boolean RLeftFifth, RRightFifth, RTopThird, RBottomThird, LLeftThird, LRightThir
 float L2dir1, L2dir2, L2y1, L2y2; 
 
 Finger  fingerIndex;
-item MainObj, BA, BB, BC, BD, BE, BF; //b=blocks A-E used in level 1 as boundaries
+item MainObj, BA, BB, BC, BD, BE, BF, BGoal; //b=blocks A-E used in level 1 as boundaries
 
  
 // Obj player; 
@@ -34,6 +34,9 @@ void setup() {
   BD = new item (200,300);
   BE = new item (150,400);
   BF = new item (400,50);
+  BGoal= new item (50,50);
+  BGoal.isGoal();
+  BGoal.setColor(0,255,0);
   gray= 0;
 
   // LEVEL 2 VARIABLES
@@ -144,7 +147,7 @@ void draw() {
       RLeftFifth=(fingerIndex.getPosition().x<200);
     }
   }
-  text (level, 500, 500); 
+
   //put level manuevering here
   if (level == -1) {
     gg(); 

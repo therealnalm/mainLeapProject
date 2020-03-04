@@ -29,6 +29,9 @@ public class item {
     objHeight= y;
   }
 
+  public void isGoal () {
+    isGoal =true;
+  }
 
   public void drawRect(float X, float Y) {
     rectMode(CENTER);
@@ -53,10 +56,11 @@ public class item {
       }
 
       if (xCollide && yCollide) {
-        gameOver();
-      }else{
-      text("It works!", 100,100);
-
+        if (isGoal) {
+          level++;
+        } else {
+          gameOver();
+        }
       }
     }
   }
@@ -73,5 +77,4 @@ public class item {
   public float getHeight () {
     return objHeight;
   }
-
 }

@@ -43,10 +43,10 @@ void Opening() {
 
 public void level1() {
 
-   MainObj.drawRect(fingerIndex.getPosition().x, fingerIndex.getPosition().y);
-   
+  MainObj.drawRect(fingerIndex.getPosition().x, fingerIndex.getPosition().y);
+
   if (levelTime<400) {
-      fill(0);
+    fill(0);
     text("Good luck! No help from us", 500, 500);
   } else {
     fill(0);
@@ -57,11 +57,10 @@ public void level1() {
     BD.drawRect(250, 700);
     BE.drawRect(775, 650);
     BF.drawRect(500, 775);
-  
-  
-    fill(0);
-     text("Level 1", 500, 400);
+    BGoal.drawRect(950, 100);
   }
+  fill(0);
+  text("Level 1", 500, 400);
   levelTime++;
 }
 
@@ -69,23 +68,24 @@ public void level1() {
 public void level2() {
   L2y1 += L2dir1;    // 
   L2y2 += L2dir2; 
-  
+  MainObj.drawRect (fingerIndex.getPosition().x, fingerIndex.getPosition().y);   
   item obs1 = new item (50, 200); 
   item obs2 = new item (50, 200); 
-  item goal = new item (200, 100); 
-  goal.setColor (0, 200, 0); 
+  item goal = new item (200, 100);  
   goal.isGoal(); 
- 
+
   obs1.drawRect(300, L2y1); 
   obs2.drawRect(600, L2y2); 
-  goal.drawRect(goal.getWidth()/2, goal.getHeight()/2); 
-  
+  BGoal.drawRect(50,700); 
+
   if (obs1.getY() - obs1.getHeight()/2 < 0 || obs1.getY() + obs1.getHeight()/2 > height) {
-    L2dir1*=-1; 
+    L2dir1*=-1;
   }
   if (obs2.getY() - obs2.getHeight()/2 < 0 || obs2.getY() + obs2.getHeight()/2 > height) {
-    L2dir2*=-1; 
+    L2dir2*=-1;
   }
+  fill(0);
+  text("Level 2", 500, 400);
 }
 
 public void level3() {
