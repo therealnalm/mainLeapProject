@@ -66,8 +66,26 @@ public void level1() {
 }
 
 
-
 public void level2() {
+  L2y1 += L2dir1;    // 
+  L2y2 += L2dir2; 
+  
+  item obs1 = new item (50, 200); 
+  item obs2 = new item (50, 200); 
+  item goal = new item (200, 100); 
+  goal.setColor (0, 200, 0); 
+  goal.isGoal(); 
+ 
+  obs1.drawRect(300, L2y1); 
+  obs2.drawRect(600, L2y2); 
+  goal.drawRect(goal.getWidth()/2, goal.getHeight()/2); 
+  
+  if (obs1.getY() - obs1.getHeight()/2 < 0 || obs1.getY() + obs1.getHeight()/2 > height) {
+    L2dir1*=-1; 
+  }
+  if (obs2.getY() - obs2.getHeight()/2 < 0 || obs2.getY() + obs2.getHeight()/2 > height) {
+    L2dir2*=-1; 
+  }
 }
 
 public void level3() {

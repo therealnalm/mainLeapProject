@@ -6,6 +6,9 @@ int level, levelTime;
 PVector rPointer, fingerPosition;
 boolean RLeftFifth, RRightFifth, RTopThird, RBottomThird, LLeftThird, LRightThird, LTopThird, LBottomThird;
 
+// LEVEL 2 VARIABLES
+float L2dir1, L2dir2, L2y1, L2y2; 
+
 Finger  fingerIndex;
 item MainObj, BA, BB, BC, BD, BE, BF; //b=blocks A-E used in level 1 as boundaries
 
@@ -33,9 +36,11 @@ void setup() {
   BF = new item (400,50);
   gray= 0;
 
-  spriteAnim joker = new spriteAnim("RedJokerIdle.png");
-  joker.setDimens(640, 340);
-  joker.setFrms(2);
+  // LEVEL 2 VARIABLES
+  L2dir1 = 10; 
+  L2dir2 = -10; 
+  L2y1 = height/2;
+  L2y2 = height/2; 
 }
 
 
@@ -139,7 +144,7 @@ void draw() {
       RLeftFifth=(fingerIndex.getPosition().x<200);
     }
   }
-  
+  text (level, 500, 500); 
   //put level manuevering here
   if (level == -1) {
     gg(); 
@@ -147,6 +152,8 @@ void draw() {
     Opening();
   } else if (level==1) {
     level1();
+  } else if (level==2) {
+    level2();
   } 
 
   levelTime++;
