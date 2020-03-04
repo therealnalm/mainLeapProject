@@ -1,7 +1,6 @@
 public class item {
 
   private float objWidth, objHeight, x, y, r, g, b;
-  public float pX, pY, pW, pH;
   boolean isPlayer = false, xCollide = false, yCollide = false; 
 
   public item(float oWidth, float oHeight) {
@@ -10,8 +9,6 @@ public class item {
     r=100;
     g=100;
     b=100;
-    pX=100;
-    pY=100;
   }
 
   public void setPlayer () {
