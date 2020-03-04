@@ -1,7 +1,7 @@
 import de.voidplus.leapmotion.*;
 
 LeapMotion leap;
-float currXR, currYR, rollR, pitchR, yawR, grabR, currXL, currYL, rollL, pitchL, yawL, grabL, eSize, r, g, b, objWidth, objHeight1;
+float currXR, currYR, rollR, pitchR, yawR, grabR, currXL, currYL, rollL, pitchL, yawL, grabL, eSize, r, g, b, gray, objWidth, objHeight1, pX, pY, pW, pH;;
 int level, levelTime;
 PVector rPointer, fingerPosition;
 boolean RLeftFifth, RRightFifth, RTopThird, RBottomThird, LLeftThird, LRightThird, LTopThird, LBottomThird;
@@ -19,7 +19,7 @@ item MainObj, BA, BB, BC, BD, BE, BF; //b=blocks A-E used in level 1 as boundari
 void setup() {
   size(1000, 800);
   background(255);
-  level=2;
+  level=0;
   eSize=40;
   leap = new LeapMotion(this);
   r=30;
@@ -27,13 +27,14 @@ void setup() {
   b=30;
   MainObj = new item(30,30);
   MainObj.setPlayer(); 
-  //Setting Calculated Lengths and widths of the blocks. X and Y coordinates are defined when they get drawn
+  //Setting Calculated Lengths and heights of the blocks. X and Y coordinates are defined when they get drawn
   BA = new item (450,450);
   BB = new item (250,350);
-  BC = new item (150,300);
+  BC = new item (150,200);
   BD = new item (200,300);
   BE = new item (150,400);
-  BF = new item (300,150);
+  BF = new item (400,50);
+  gray= 0;
 
   // LEVEL 2 VARIABLES
   L2dir1 = 10; 
@@ -55,8 +56,7 @@ boolean RIsLeftThird() {
 void draw() {
   textSize(40);
   textAlign(CENTER);
-  // background(r, g, b);
-  background (r,g,b); 
+  background (gray); 
   println("Test");
   
 
@@ -106,7 +106,7 @@ void draw() {
         yawR=handPitch;
         pitchR=handYaw;
         grabR= hand.getGrabStrength();
-        text("ere"+grabR, 20, 60);
+        text(gray, 40, 60);
       } else if (handIsLeft) {
         currXL=handPosition.x;
         currYL=handPosition.y;
@@ -144,7 +144,7 @@ void draw() {
       RLeftFifth=(fingerIndex.getPosition().x<200);
     }
   }
-  
+  text (level, 500, 500); 
   //put level manuevering here
   if (level == -1) {
     gg(); 

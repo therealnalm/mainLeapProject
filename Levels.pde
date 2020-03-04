@@ -1,6 +1,6 @@
 void gg() {
   background (0); 
-  MainObj.setColor(0, 200,200); 
+  MainObj.setColor(125, 125, 125); 
   if (fingerIndex!=null) {
     MainObj.drawRect (fingerIndex.getPosition().x, fingerIndex.getPosition().y);
   }
@@ -17,48 +17,50 @@ void Opening() {
       f.drawJoints();
     }
   }
-  eSize=map(grabR, 0, 1, 20, 60);
+  eSize=gray;
   if (fingerIndex!=null)
     MainObj.drawRect (fingerIndex.getPosition().x, fingerIndex.getPosition().y);    // GOES IN EVERY LEVEL
-  if (g<250) {     // This whole thing just makes the background green based off xPos
-    g=map(currXR, 0, 1000, 0, 255);
-  } else if (r<250) {
-    g=255;
-    r=map(currXR, 1000, 200, 0, 255);
+  if (gray<120) {     // This whole thing just makes the background green based off xPos
+    gray=map(currXR, 0, 1000, 0, 125);
   } else {
-    r=255;
-    b=map(currXR, 0, 1000, 0, 255);
-    if (b>250) {
-      level++;
-      levelTime=0;
-      b=255;
-    }
+    gray=map(currXR, 200, 1000, 255, 130);
   }
+  if (gray>250) {
+    level++;
+    levelTime=0;
+    gray=255;
+  }
+
 
 
   // TESTING
   item TestBox = new item(100, 100); 
-  TestBox.setColor (0,200,200); 
+  TestBox.setColor (0, 200, 200); 
   TestBox.drawRect(200, 200);
 }
 
 
 
 public void level1() {
-  fill(0);
+
+   MainObj.drawRect(fingerIndex.getPosition().x, fingerIndex.getPosition().y);
+   
   if (levelTime<400) {
+      fill(0);
     text("Good luck! No help from us", 500, 500);
   } else {
     fill(0);
-    text("Level 1", 500, 500);
-    MainObj.drawRect(fingerIndex.getPosition().x, fingerIndex.getPosition().y);
+
     BA.drawRect(375, 225);
     BB.drawRect(725, 175);
-    BC.drawRect(575, 600);
+    BC.drawRect(575, 550);
     BD.drawRect(250, 700);
     BE.drawRect(775, 650);
-    BF.drawRect(500, 925);
-    //if(inBoundaries(currXR, currYR, 0, 20, 0, 0))
+    BF.drawRect(500, 775);
+  
+  
+    fill(0);
+     text("Level 1", 500, 400);
   }
   levelTime++;
 }
