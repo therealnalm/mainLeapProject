@@ -7,7 +7,7 @@ PVector rPointer, fingerPosition;
 boolean RLeftFifth, RRightFifth, RTopThird, RBottomThird, LLeftThird, LRightThird, LTopThird, LBottomThird;
 
 Finger  fingerIndex;
-item MainObj;
+item MainObj, BA, BB, BC, BD, BE, BF; //b=blocks A-E used in level 1 as boundaries
 
  
 // Obj player; 
@@ -24,6 +24,13 @@ void setup() {
   b=30;
   MainObj = new item(30,30);
   MainObj.setPlayer(); 
+  //Setting Calculated Lengths and widths of the blocks. X and Y coordinates are defined when they get drawn
+  BA = new item (450,450);
+  BB = new item (250,350);
+  BC = new item (150,300);
+  BD = new item (200,300);
+  BE = new item (150,400);
+  BF = new item (300,150);
 
   spriteAnim joker = new spriteAnim("RedJokerIdle.png");
   joker.setDimens(640, 340);
@@ -44,7 +51,7 @@ void draw() {
   textSize(40);
   textAlign(CENTER);
   // background(r, g, b);
-  background (255); 
+  background (r,g,b); 
   println("Test");
   
 
