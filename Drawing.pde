@@ -2,7 +2,7 @@ public class item {
 
   private float objWidth, objHeight, x, y, r, g, b;
   public float pX, pY, pW, pH;
-  boolean isPlayer = false, xCollide = false, yCollide = false; 
+  boolean isPlayer = false, xCollide = false, yCollide = false, isGoal = false; 
 
   public item(float oWidth, float oHeight) {
     objWidth=oWidth;
@@ -30,6 +30,10 @@ public class item {
     objWidth=x;
     objHeight= y;
   }
+  
+  public void isGoal () {
+    isGoal = true; 
+  }
 
   public void drawRect(float X, float Y) {
     rectMode(CENTER);
@@ -54,7 +58,11 @@ public class item {
       }
 
       if (xCollide && yCollide) {
-        gameOver();
+        if (isGoal) {
+          level++; 
+        } else {
+          gameOver();
+        }
       }
     }
   }
@@ -72,7 +80,4 @@ public class item {
     return objHeight;
   }
 
-  /*public boolean inBoundaries(int X, int Y, int xLeft, int xRight, int yTop, int yBottom){
-   return ((x-objWidth/2>xLeft)&&(x+objWidth/2<xRight)&&(y-objHeight/2>yTop)&&(y+objHeight/2<yBottom));
-   } */
 }

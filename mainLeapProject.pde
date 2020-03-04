@@ -6,6 +6,9 @@ int level, levelTime;
 PVector rPointer, fingerPosition;
 boolean RLeftFifth, RRightFifth, RTopThird, RBottomThird, LLeftThird, LRightThird, LTopThird, LBottomThird;
 
+// LEVEL 2 VARIABLES
+float L2dir1, L2dir2, L2y1, L2y2; 
+
 Finger  fingerIndex;
 item MainObj, BA, BB, BC, BD, BE, BF; //b=blocks A-E used in level 1 as boundaries
 
@@ -14,9 +17,9 @@ item MainObj, BA, BB, BC, BD, BE, BF; //b=blocks A-E used in level 1 as boundari
 
 
 void setup() {
-  size(1000, 1000);
+  size(1000, 800);
   background(255);
-  level=0;
+  level=2;
   eSize=40;
   leap = new LeapMotion(this);
   r=30;
@@ -32,9 +35,11 @@ void setup() {
   BE = new item (150,400);
   BF = new item (300,150);
 
-  spriteAnim joker = new spriteAnim("RedJokerIdle.png");
-  joker.setDimens(640, 340);
-  joker.setFrms(2);
+  // LEVEL 2 VARIABLES
+  L2dir1 = 10; 
+  L2dir2 = -10; 
+  L2y1 = height/2;
+  L2y2 = height/2; 
 }
 
 
@@ -147,6 +152,8 @@ void draw() {
     Opening();
   } else if (level==1) {
     level1();
+  } else if (level==2) {
+    level2();
   } 
 
   levelTime++;
